@@ -14,10 +14,11 @@ apt-get install --yes libmodsecurity3 libmodsecurity-dev libcurl4-openssl-dev li
 git clone https://github.com/google/ngx_brotli.git
 cd /tmp/ngx_brotli/deps
 git clone https://github.com/google/brotli
+cd /tmp
 wget -O ngx_waf.zip https://github.com/ADD-SP/ngx_waf/archive/refs/heads/current.zip
 unzip ngx_waf.zip
 mv /tmp/ngx_waf-current /tmp/ngx_waf
-cd /tmp/ngx_waf_current
+cd /tmp/ngx_waf
 git clone -b v1.7.15 https://github.com/DaveGamble/cJSON.git lib/cjson
 git clone -b v2.3.0 https://github.com/troydhanson/uthash.git lib/uthash
 cd 
