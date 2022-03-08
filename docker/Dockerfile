@@ -57,6 +57,8 @@ RUN apt-get update \
 	tzdata \
 	unzip \
 	zlib1g \
+	libmodsecurity-dev \
+	libsodium-dev \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& rm -rf /var/cache/* /var/log/* /tmp/* /var/lib/dpkg/status-old
