@@ -18,6 +18,7 @@ cd /tmp
 wget -O ngx_waf.zip https://github.com/ADD-SP/ngx_waf/archive/refs/heads/current.zip
 unzip ngx_waf.zip
 mv /tmp/ngx_waf-current /tmp/ngx_waf
+chmod 777 -R /tmp/ngx_waf
 cd /tmp/ngx_waf
 git clone -b v1.7.15 https://github.com/DaveGamble/cJSON.git lib/cjson
 git clone -b v2.3.0 https://github.com/troydhanson/uthash.git lib/uthash
@@ -71,7 +72,7 @@ cd /tmp/openresty
 	--add-module=/tmp/ngx_waf \
 	--add-module=/tmp/ngx_brotli
 	
-#sed -i 's/^\(CFLAGS.*\)/\1 -fstack-protector-strong -Wno-sign-compare/' objs/Makefile
+sed -i 's/^\(CFLAGS.*\)/\1 -fstack-protector-strong -Wno-sign-compare/' /tmp/openresty/objs/Makefile
 find / -name Makefile
 make -j $(nproc)
 
