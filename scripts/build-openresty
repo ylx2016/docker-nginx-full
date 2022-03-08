@@ -71,7 +71,8 @@ cd /tmp/openresty
 	--add-module=/tmp/ngx_waf \
 	--add-module=/tmp/ngx_brotli
 	
-sed -i 's/^\(CFLAGS.*\)/\1 -fstack-protector-strong -Wno-sign-compare/' objs/Makefile
+#sed -i 's/^\(CFLAGS.*\)/\1 -fstack-protector-strong -Wno-sign-compare/' objs/Makefile
+find / -name Makefile
 make -j $(nproc)
 
 echo -e "${BLUE}❯ ${GREEN}OpenResty build completed${RESET}"
