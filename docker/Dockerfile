@@ -65,6 +65,8 @@ COPY ./files/.bashrc /root/.bashrc
 
 # Copy lua and luarocks builds from first image
 COPY --from=nginxbuilder /tmp/lua /tmp/lua
+COPY --from=nginxbuilder /tmp/ngx_waf /tmp/ngx_waf
+COPY --from=nginxbuilder /tmp/ngx_brotli /tmp/ngx_brotli
 COPY --from=nginxbuilder /tmp/luarocks /tmp/luarocks
 COPY ./scripts/install-lua /tmp/install-lua
 
