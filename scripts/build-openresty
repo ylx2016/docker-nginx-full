@@ -67,11 +67,11 @@ cd /tmp/openresty
 	--with-stream \
 	--with-stream_realip_module \
 	--with-stream_ssl_module \
-	--with-stream_ssl_preread_module
-	--add-module=/tmp/ngx_waf
+	--with-stream_ssl_preread_module \
+	--add-module=/tmp/ngx_waf \
 	--add-module=/tmp/ngx_brotli
 	
 sed -i 's/^\(CFLAGS.*\)/\1 -fstack-protector-strong -Wno-sign-compare/' objs/Makefile
-make -j2
+make -j $(nproc)
 
 echo -e "${BLUE}❯ ${GREEN}OpenResty build completed${RESET}"
